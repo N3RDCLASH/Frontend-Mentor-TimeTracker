@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Time tracking dashboard</title>
+  <link rel="stylesheet" href="style/main.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/5c2c96cfa2.js" crossorigin="anonymous"></script>
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+</head>
+
+<body id="app">
+  <main>
+    <div class="container">
+      <div class="card-user">
+        <div class="user-profile">
+          <div class="user-image">
+            <img src="images/image-jeremy.png" alt="" class="avatar-image">
+          </div>
+          <!-- todo: add "Report for" as ::before sudo element -->
+          <div class="user-name">
+            <span>Jeremy Robson</span>
+          </div>
+        </div>
+        <div class="timeframe-container">
+          <span :class="{active:active=='daily'}" v-on:click="setActiveTimeframe('daily')">Daily</span>
+          <span :class="{active:active=='weekly'}" v-on:click="setActiveTimeframe('weekly')">Weekly</span>
+          <span :class=" {active:active=='monthly' } " v-on:click="setActiveTimeframe('monthly')">Monthly</span>
+        </div>
+      </div>
+
+      <div class="activity-cards-container">
+        <div class="activity-card" v-for="activity in currentActivties">
+          <div :class="['card-overlay',getClass(activity.title)]">
+          </div>
+          <div class="card-information">
+            <div class="card-header">
+              <div class="card-title">{{activity.title}}</div>
+              <div class="card-action"><img src="images/icon-ellipsis.svg" alt=""></div>
+            </div>
+            <div class="card-body">
+              <div class="current-time">{{activity.timeframe.current}}</div>
+              <div class="previous-time">{{activity.timeframe.previous}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      <br>
+      Coded with <i class="fas fa-heart light-red-text"></i> by <a href="#">Joel Naarendorp</a>.
+    </div>
+  </main>
+  <script rel="preconnect" src="https://unpkg.com/vue@next"></script>
+  <script src="scripts/main.js"></script>
+</body>
+
+</html>
