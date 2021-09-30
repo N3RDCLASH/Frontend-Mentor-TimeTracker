@@ -261,8 +261,9 @@ main {
   > *
   > .card-information
   > .card-header
-  > .card-action:hover {
-  color: white;
+  > .card-action
+  > svg:hover *{
+  fill: white;
 }
 
 .activity-cards-container > * > .card-information > .card-body {
@@ -347,6 +348,7 @@ main {
     grid-template-rows: none;
     margin: 6em auto 1.5rem auto;
     width: 80%;
+    max-width: 400px;
   }
   .card-user {
     margin-bottom: 1.5rem;
