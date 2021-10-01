@@ -261,8 +261,9 @@ main {
   > *
   > .card-information
   > .card-header
-  > .card-action
-  > svg:hover *{
+  > .card-action:hover
+  > svg
+  * {
   fill: white;
 }
 
