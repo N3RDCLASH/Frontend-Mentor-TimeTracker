@@ -16,6 +16,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/5c2c96cfa2.js" crossorigin="anonymous"></script>
+
+
+  <link rel="manifest" href="manifest.json">
+  <script rel="preconnect" src="/scripts/vue.global.prod.js"></script>
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
 </head>
 
@@ -67,10 +71,15 @@
     <div class="attribution">
       Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
       <br>
-      Coded with <i class="fas fa-heart light-red-text"></i> by <a href="#">Joel Naarendorp</a>.
+      Coded with <i class="fas fa-heart light-red-text"></i> by <a href="https://github.com/N3RDCLASH">Joel
+        Naarendorp</a>.
     </div>
   </main>
-  <script rel="preconnect" src="https://unpkg.com/vue@next"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/service-worker.js')
+    }
+  </script>
   <script src="scripts/main.js"></script>
 </body>
 
